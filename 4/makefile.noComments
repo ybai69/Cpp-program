@@ -1,0 +1,13 @@
+all: i
+
+Stack.o: Stack.h Stack.cxx
+	g++ -Wall -g -c Stack.cxx
+
+infix.o: Stack.h infix.cxx
+	g++ -Wall -g -c infix.cxx
+
+i: Stack.o infix.o
+	g++ -Wall -g -o i Stack.o infix.o
+
+clean:
+	rm -f *.o i core
